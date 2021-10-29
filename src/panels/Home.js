@@ -5,6 +5,7 @@ import Base from "../components/Base";
 
 import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar } from '@vkontakte/vkui';
 import bridge from "@vkontakte/vk-bridge";
+import axios from "axios";
 
 const Home = ({ id, go, fetchedUser, dataInfo,setActivePanel}) => {
 	useEffect(()=>{console.log(fetchedUser)},[fetchedUser]);
@@ -29,6 +30,16 @@ const Home = ({ id, go, fetchedUser, dataInfo,setActivePanel}) => {
 	},[dataInfo])
 
 	const dataReset = () =>{
+		let config = {
+			headers: {
+				"Content-Type": "application/json",
+				'Access-Control-Allow-Origin': '*',
+			}
+		}
+
+		axios.get(`https://thelaxab.ru/timetable/delete_user.php?id=${fetchedUser.id}`,config)
+			.then(response=>console.log(response.data))
+
 		bridge.send("VKWebAppStorageSet", {"key": 'faculty', "value": ''})
 			.then(response=>console.log(response))
 		bridge.send("VKWebAppStorageSet", {"key": 'group', "value": ''})

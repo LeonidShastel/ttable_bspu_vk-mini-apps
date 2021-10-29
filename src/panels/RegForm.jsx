@@ -35,16 +35,14 @@ const RegForm = ({id,setActivePanel ,togglePopout,fetchedUser}) => {
     const saveUser = () =>{
         setShowModal(null);
         togglePopout(true);
-        bridge.send("VKWebAppGetCommunityToken", {"app_id": 7984065, "group_id": 208234280, "scope": "messages"})
+        bridge.send("VKWebAppAllowMessagesFromGroup", {"group_id": 208234280, "key": fetchedUser.id})
             .then(response=>{
                 console.log(response)
-                if(response.access_token){
                     const data = {
                         'name': fetchedUser.first_name+' '+fetchedUser.last_name,
                         'id':fetchedUser.id,
-                        'faculty':faculty,
-                        'group':group,
-                        'access_token':response.access_token,
+                        'faculty':Base[faculty].fuc_id,
+                        'group':Base[faculty].groups[group].group_id,
                     }
                     let config = {
                         headers: {
@@ -62,7 +60,7 @@ const RegForm = ({id,setActivePanel ,togglePopout,fetchedUser}) => {
                     bridge.send("VKWebAppStorageSet", {"key": 'group', "value": ''+Base[faculty].groups[group].group_id})
                         .then(response=>console.log(response))
 
-                }
+
             })
             .then((res)=>{
                 togglePopout(false);
