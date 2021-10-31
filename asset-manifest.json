@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/ttable_bspu_vk-mini-apps/static/js/main.6e79259e.chunk.js",
-    "main.js.map": "/ttable_bspu_vk-mini-apps/static/js/main.6e79259e.chunk.js.map",
+    "main.js": "/ttable_bspu_vk-mini-apps/static/js/main.fa6637c2.chunk.js",
+    "main.js.map": "/ttable_bspu_vk-mini-apps/static/js/main.fa6637c2.chunk.js.map",
     "runtime-main.js": "/ttable_bspu_vk-mini-apps/static/js/runtime-main.e69607dc.js",
     "runtime-main.js.map": "/ttable_bspu_vk-mini-apps/static/js/runtime-main.e69607dc.js.map",
     "static/css/2.a2ab3232.chunk.css": "/ttable_bspu_vk-mini-apps/static/css/2.a2ab3232.chunk.css",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.e69607dc.js",
     "static/css/2.a2ab3232.chunk.css",
     "static/js/2.07ef9341.chunk.js",
-    "static/js/main.6e79259e.chunk.js"
+    "static/js/main.fa6637c2.chunk.js"
   ]
 }
